@@ -1,16 +1,20 @@
 package com.exmple.lenovo.mynotesapp.view;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
-import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.AlertDialog;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -26,7 +30,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class MainActivity extends FragmentActivity {
+public class MainActivity extends AppCompatActivity {
     private NotesAdapter mAdapter;
     private List<Note> notesList = new ArrayList<>();
     private CoordinatorLayout coordinatorLayout;
@@ -43,7 +47,6 @@ public class MainActivity extends FragmentActivity {
         coordinatorLayout = findViewById(R.id.coordinator_layout);
         recyclerView = findViewById(R.id.recycler_view);
         noNotesView = findViewById(R.id.empty_notes_view);
-
         db = new DatabaseHelper(this);
 
         notesList.addAll(db.getAllNotes());
@@ -126,6 +129,7 @@ public class MainActivity extends FragmentActivity {
         });
         builder.show();
     }
+
     private void showNoteDialog(final boolean shouldUpdate, final Note note, final int position) {
         LayoutInflater layoutInflaterAndroid = LayoutInflater.from(getApplicationContext());
         View view = layoutInflaterAndroid.inflate(R.layout.note_dialog, null);
@@ -184,8 +188,9 @@ public class MainActivity extends FragmentActivity {
             noNotesView.setVisibility(View.VISIBLE);
         }
     }
+
     public void buttonClick(View view) {
-        long endTime = System.currentTimeMillis() + 10*1000;
+        long endTime = System.currentTimeMillis() + 10 * 1000;
         while (System.currentTimeMillis() < endTime) {
             synchronized (this) {
                 try {
@@ -195,7 +200,23 @@ public class MainActivity extends FragmentActivity {
             }
         }
         TextView myTextView =
-                (TextView)findViewById(R.id.blanktext);
+                (TextView) findViewById(R.id.blanktext);
         myTextView.setText("Terkirim");
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_menu, menu);
+        return true;
+    }
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == R.id.action_settings) {
+            startActivity(new Intent(this, Settings.class));
+        } else if (item.getItemId() == R.id.lihat_berita) {
+            startActivity(new Intent(this, Berita.class));
+        }
+        return true;
+    }
 }
+

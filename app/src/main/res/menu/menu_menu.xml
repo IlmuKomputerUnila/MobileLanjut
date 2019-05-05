@@ -3,6 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.exmple.lenovo.mynotesapp.Menu">
     <item
+        android:id="@+id/lihat_berita"
+        android:orderInCategory="100"
+        android:title="@string/lihatberita"
+        app:showAsAction="never" />
+    <item
         android:id="@+id/action_settings"
         android:orderInCategory="100"
         android:title="@string/action_settings"

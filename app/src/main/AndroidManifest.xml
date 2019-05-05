@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.exmple.lenovo.mynotesapp">
-
+    <uses-permission android:name="android.permission.INTERNET"/>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,12 +10,33 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".view.DetailActivity"
+            android:parentActivityName=".view.Berita">
+        <meta-data
+            android:name="android.support.PARRENT_ACTIVITY"
+            android:value=".view.Berita"/>
+        </activity>
+        <activity
+            android:name=".view.Settings"
+            android:label="Settings"
+            android:parentActivityName=".view.MainActivity">
+            <meta-data
+                android:name="android.support.PARRENT_ACTIVITY"
+                android:value=".view.MainActivity"/>
+        </activity>
+        <activity
+            android:name=".view.Berita"
+            android:label="Berita Terbaru"
+            android:parentActivityName=".view.MainActivity">
+            <meta-data
+                android:name="android.support.PARRENT_ACTIVITY"
+                android:value=".view.MainActivity"/>
+        </activity>
+        <activity
             android:name=".Menu"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar"
-            ></activity>
-        <activity android:name=".view.MainActivity"
-            android:theme="@style/AppTheme.NoActionBar"/>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".view.MainActivity" />
         <activity
             android:name=".view.SplashScreen"
             android:label="@string/app_name"

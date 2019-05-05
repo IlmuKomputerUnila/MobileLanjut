@@ -20,9 +20,9 @@
 
     <EditText
         android:id="@+id/note"
-        android:layout_gravity="center_vertical|end"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="269dp"
+        android:layout_gravity="center_vertical|end"
         android:background="@android:color/transparent"
         android:gravity="top"
         android:hint="@string/hint_enter_note"
