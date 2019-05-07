@@ -36,8 +36,8 @@ public class MainActivity extends AppCompatActivity {
     private CoordinatorLayout coordinatorLayout;
     private RecyclerView recyclerView;
     private TextView noNotesView;
-
     private DatabaseHelper db;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,7 +73,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view, final int position) {
             }
-
             @Override
             public void onLongClick(View view, int position) {
                 showActionsDialog(position);
@@ -94,21 +93,16 @@ public class MainActivity extends AppCompatActivity {
     private void updateNote(String note, int position) {
         Note n = notesList.get(position);
         n.setNote(note);
-
         db.updateNote(n);
-
         notesList.set(position, n);
         mAdapter.notifyItemChanged(position);
-
         toggleEmptyNotes();
     }
 
     private void deleteNote(int position) {
         db.deleteNote(notesList.get(position));
-
         notesList.remove(position);
         mAdapter.notifyItemRemoved(position);
-
         toggleEmptyNotes();
     }
 
@@ -122,14 +116,13 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(DialogInterface dialog, int which) {
                 if (which == 0) {
                     showNoteDialog(true, notesList.get(position), position);
-                } else {
+                } else{
                     deleteNote(position);
                 }
             }
         });
         builder.show();
     }
-
     private void showNoteDialog(final boolean shouldUpdate, final Note note, final int position) {
         LayoutInflater layoutInflaterAndroid = LayoutInflater.from(getApplicationContext());
         View view = layoutInflaterAndroid.inflate(R.layout.note_dialog, null);
@@ -190,6 +183,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void buttonClick(View view) {
+        Intent intent = new Intent(Intent.ACTION_SEND);
+        intent.putExtra(Intent.EXTRA_TEXT, "data");
+        intent.setType("text/plain");
+        intent.setPackage("com.whatsapp");
+        startActivity(intent);
         long endTime = System.currentTimeMillis() + 10 * 1000;
         while (System.currentTimeMillis() < endTime) {
             synchronized (this) {
@@ -199,8 +197,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         }
-        TextView myTextView =
-                (TextView) findViewById(R.id.blanktext);
+        TextView myTextView = (TextView) findViewById(R.id.blanktext);
         myTextView.setText("Terkirim");
     }
 
