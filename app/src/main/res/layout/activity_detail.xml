@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -7,13 +6,6 @@
     android:orientation="vertical"
     android:fitsSystemWindows="true"
     tools:context=".view.DetailActivity">
-
-    <ImageView
-        android:id="@+id/ivGambarBerita"
-        android:layout_width="match_parent"
-        android:layout_height="160dp"
-        android:scaleType="fitXY"
-        android:src="@mipmap/ic_launcher" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"
@@ -24,6 +16,13 @@
         app:layout_anchorGravity="right|bottom"
         app:srcCompat="@drawable/ic_open_in_browser_black_24dp" />
 
-    <include layout="@layout/content_detail" />
+    <ImageView
+        android:id="@+id/ivGambarBerita"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:scaleType="fitXY"
+        android:src="@mipmap/ic_launcher" />
+
+    <include layout="@layout/content_detail"></include>
 
 </android.support.design.widget.CoordinatorLayout>

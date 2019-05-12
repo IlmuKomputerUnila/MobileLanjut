@@ -1,4 +1,4 @@
-package com.exmple.lenovo.mynotesapp.view;
+package com.exmple.lenovo.mynotesapp.Adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -8,14 +8,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.exmple.lenovo.mynotesapp.R;
+import com.exmple.lenovo.mynotesapp.database.model.Note;
+import com.exmple.lenovo.mynotesapp.view.MainActivity;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
-
-import com.exmple.lenovo.mynotesapp.Fragment1;
-import com.exmple.lenovo.mynotesapp.R;
-import com.exmple.lenovo.mynotesapp.database.model.Note;
 
 public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.MyViewHolder> {
 

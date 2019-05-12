@@ -8,13 +8,13 @@
     <string name="title_activity_menu_fragment">MenuFragment</string>
     <string name="tab_text_1">Note Release</string>
     <string name="tab_text_2">Berita</string>
-    <string name="action_settings">Setting</string>
+    <string name="appinfo">App Info</string>
     <string name="title_activity_menu">Menu</string>
     <string name="tab_text_3">Tab 3</string>
     <string name="kirim">Send</string>
     <string name="terkirim">Terkirim</string>
     <string name="lihatberita">Lihat Berita</string>
-    <string name="judul_artikel_berita">Judul Artikel Berita Critian Gonzales Percaya Madura United Lebih Baik Di Liga 1</string>
+    <string name="judul_artikel_berita">Judul Artikel Berita United Lebih Baik Di Liga 1</string>
     <string name="oleh_bustomi">Oleh : Bustomi</string>
     <string name="sabtu_4_may_2019">Sabtu, 4 May 2019.</string>
     <string name="title_activity_detail">DetailActivity</string>
@@ -110,4 +110,9 @@
     <string name="appwidget_text">EXAMPLE</string>
     <string name="configure">Configure</string>
     <string name="add_widget">Add widget</string>
+    <string name="search">Search</string>
+    <string name="press_release">Press Release</string>
+    <string name="version_beta">Version BETA</string>
+    <string name="_2019_universitas_lampung">2019 Universitas Lampung</string>
+    <string name="preview">Preview</string>
 </resources>

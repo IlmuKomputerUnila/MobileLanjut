@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="10dp"
-        android:layout_marginTop="95dp"
+        android:layout_marginTop="130dp"
         android:orientation="vertical">
         <TextView
             android:id="@+id/tvJudulBerita"
@@ -20,7 +20,7 @@
             android:layout_height="wrap_content"
             android:textSize="20sp"
             android:textStyle="bold"
-            android:textColor="#fff"
+            android:textColor="@color/colorPrimary"
             android:text="@string/judul_artikel_berita"
             android:layout_marginBottom="17dp"/>
         <LinearLayout
@@ -28,13 +28,20 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="15dp"
             android:orientation="horizontal">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_event_note_24dp"/>
             <TextView
+                android:layout_marginHorizontal="2dp"
+                android:paddingTop="3dp"
                 android:id="@+id/tvTglTerbit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/sabtu_4_may_2019"/>
             <TextView
                 android:id="@+id/tvPenulis"
+                android:paddingTop="3dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="10dp"

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
     android:paddingLeft="@dimen/activity_margin"
     android:paddingRight="@dimen/activity_margin"
@@ -13,7 +13,7 @@
         android:layout_marginBottom="@dimen/dimen_10"
         android:fontFamily="sans-serif-medium"
         android:lineSpacingExtra="8sp"
-        android:text="@string/lbl_new_note_title"
+        android:text="@string/preview"
         android:textColor="@color/colorAccent"
         android:textSize="@dimen/lbl_new_note_title"
         android:textStyle="normal" />
@@ -21,7 +21,7 @@
     <EditText
         android:id="@+id/note"
         android:layout_width="match_parent"
-        android:layout_height="269dp"
+        android:layout_height="290dp"
         android:layout_gravity="center_vertical|end"
         android:background="@android:color/transparent"
         android:gravity="top"
@@ -30,5 +30,4 @@
         android:lines="20"
         android:textColorHint="@color/hint_enter_note"
         android:textSize="@dimen/input_new_note" />
-
 </LinearLayout>

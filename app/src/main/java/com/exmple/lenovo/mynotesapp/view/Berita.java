@@ -1,23 +1,31 @@
 package com.exmple.lenovo.mynotesapp.view;
 
+import android.app.SearchManager;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.SearchView;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.exmple.lenovo.mynotesapp.Adapter.AdapterBerita;
 import com.exmple.lenovo.mynotesapp.Network.ApiServices;
 import com.exmple.lenovo.mynotesapp.Network.InitRetrofit;
 import com.exmple.lenovo.mynotesapp.R;
 import com.exmple.lenovo.mynotesapp.response.BeritaItem;
-
 import com.exmple.lenovo.mynotesapp.response.ResponseBerita;
 
 import java.util.List;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+
 
 public class Berita extends AppCompatActivity {
 
@@ -67,5 +75,15 @@ public class Berita extends AppCompatActivity {
                 t.printStackTrace();
             }
         });
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.search, menu);
+        SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
+        final SearchView searchView = (SearchView) menu.findItem(R.id.action_search).getActionView();
+        MenuItem searchMenuItem = menu.findItem(R.id.action_search);
+        return true;
     }
 }

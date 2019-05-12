@@ -1,4 +1,4 @@
-package com.exmple.lenovo.mynotesapp.view;
+package com.exmple.lenovo.mynotesapp.Adapter;
 
 import android.content.Context;
 import android.content.Intent;
@@ -11,11 +11,12 @@ import android.widget.TextView;
 
 import com.exmple.lenovo.mynotesapp.R;
 import com.exmple.lenovo.mynotesapp.response.BeritaItem;
+import com.exmple.lenovo.mynotesapp.view.DetailActivity;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
-class AdapterBerita extends RecyclerView.Adapter<AdapterBerita.MyViewHolder> {
+public class AdapterBerita extends RecyclerView.Adapter<AdapterBerita.MyViewHolder> {
     // Buat Global variable untuk manampung context
     Context context;
     List<BeritaItem> berita;
@@ -39,6 +40,7 @@ class AdapterBerita extends RecyclerView.Adapter<AdapterBerita.MyViewHolder> {
     public void onBindViewHolder(MyViewHolder holder, final int position) {
         // Set widget
         holder.tvJudul.setText(berita.get(position).getJudulBerita());
+        holder.tvPenulis.setText(berita.get(position).getPenulis());
         holder.tvTglTerbit.setText(berita.get(position).getTanggalPosting());
 
         // Dapatkan url gambar
@@ -82,7 +84,7 @@ class AdapterBerita extends RecyclerView.Adapter<AdapterBerita.MyViewHolder> {
             ivGambarBerita = (ImageView) itemView.findViewById(R.id.ivPosterBerita);
             tvJudul = (TextView) itemView.findViewById(R.id.tvJudulBerita);
             tvTglTerbit = (TextView) itemView.findViewById(R.id.tvTglTerbit);
-            tvPenulis = (TextView) itemView.findViewById(R.id.tvPenulis);
+            tvPenulis = (TextView) itemView.findViewById(R.id.Penulis);
         }
     }
 }

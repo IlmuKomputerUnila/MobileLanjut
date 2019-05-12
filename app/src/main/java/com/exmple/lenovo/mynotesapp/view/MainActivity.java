@@ -11,6 +11,7 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
+import android.text.method.ScrollingMovementMethod;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -20,6 +21,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.exmple.lenovo.mynotesapp.Adapter.NotesAdapter;
 import com.exmple.lenovo.mynotesapp.R;
 import com.exmple.lenovo.mynotesapp.database.DatabaseHelper;
 import com.exmple.lenovo.mynotesapp.database.model.Note;
@@ -72,6 +74,7 @@ public class MainActivity extends AppCompatActivity {
                 recyclerView, new RecyclerTouchListener.ClickListener() {
             @Override
             public void onClick(View view, final int position) {
+                viewNote(position);
             }
             @Override
             public void onLongClick(View view, int position) {
@@ -104,6 +107,52 @@ public class MainActivity extends AppCompatActivity {
         notesList.remove(position);
         mAdapter.notifyItemRemoved(position);
         toggleEmptyNotes();
+    }
+
+    private void viewNote(final int position){
+        showViewNote( true,notesList.get(position), position);
+    }
+    //Masih Error
+    public void buttonClick(View view){
+        Intent intent = new Intent(Intent.ACTION_SEND);
+        intent.putExtra(Intent.EXTRA_TEXT, "Data");
+        intent.setType("text/plain");
+        intent.setPackage("com.whatsapp");
+        startActivity(intent);
+        long endTime = System.  currentTimeMillis() + 10 * 1000;
+        while (System.currentTimeMillis() < endTime) {
+            synchronized (this) {
+                try {
+                    wait(endTime - System.currentTimeMillis());
+                } catch (Exception e) {
+                }
+            }
+        }
+        TextView myTextView = (TextView) findViewById(R.id.blanktext);
+        myTextView.setText("Terkirim");
+    }
+    private void showViewNote(final boolean viewNote, final Note note, final int position) {
+        LayoutInflater layoutInflaterAndroid = LayoutInflater.from(getApplicationContext());
+        View view = layoutInflaterAndroid.inflate(R.layout.view_doalog, null);
+
+        AlertDialog.Builder alertDialogBuilderUserInput = new AlertDialog.Builder(MainActivity.this);
+        alertDialogBuilderUserInput.setView(view);
+        TextView viewN = view.findViewById(R.id.note);
+        viewN.setMovementMethod(new ScrollingMovementMethod());
+        TextView dialogTitle = view.findViewById(R.id.dialog_title);
+        dialogTitle.setText(getString(R.string.preview));
+        if (viewNote && note != null) {
+            viewN.setText(note.getNote());
+        }
+        alertDialogBuilderUserInput
+                .setPositiveButton("Back",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialogBox, int id) {
+                                dialogBox.cancel();
+                            }
+                        });
+        final AlertDialog alertDialog = alertDialogBuilderUserInput.create();
+        alertDialog.show();
     }
 
     private void showActionsDialog(final int position) {
@@ -182,25 +231,6 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void buttonClick(View view) {
-        Intent intent = new Intent(Intent.ACTION_SEND);
-        intent.putExtra(Intent.EXTRA_TEXT, "data");
-        intent.setType("text/plain");
-        intent.setPackage("com.whatsapp");
-        startActivity(intent);
-        long endTime = System.  currentTimeMillis() + 10 * 1000;
-        while (System.currentTimeMillis() < endTime) {
-            synchronized (this) {
-                try {
-                    wait(endTime - System.currentTimeMillis());
-                } catch (Exception e) {
-                }
-            }
-        }
-        TextView myTextView = (TextView) findViewById(R.id.blanktext);
-        myTextView.setText("Terkirim");
-    }
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
@@ -208,8 +238,8 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
     public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId() == R.id.action_settings) {
-            startActivity(new Intent(this, Settings.class));
+        if (item.getItemId() == R.id.appinfo) {
+            startActivity(new Intent(this, AppInfo.class));
         } else if (item.getItemId() == R.id.lihat_berita) {
             startActivity(new Intent(this, Berita.class));
         }
