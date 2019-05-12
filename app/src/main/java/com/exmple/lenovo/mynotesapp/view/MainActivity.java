@@ -188,7 +188,7 @@ public class MainActivity extends AppCompatActivity {
         intent.setType("text/plain");
         intent.setPackage("com.whatsapp");
         startActivity(intent);
-        long endTime = System.currentTimeMillis() + 10 * 1000;
+        long endTime = System.  currentTimeMillis() + 10 * 1000;
         while (System.currentTimeMillis() < endTime) {
             synchronized (this) {
                 try {
