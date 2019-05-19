@@ -40,7 +40,6 @@ public class MainActivity extends AppCompatActivity {
     private TextView noNotesView;
     private DatabaseHelper db;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -112,6 +111,7 @@ public class MainActivity extends AppCompatActivity {
     private void viewNote(final int position){
         showViewNote( true,notesList.get(position), position);
     }
+
     //Masih Error
     public void buttonClick(View view){
         Intent intent = new Intent(Intent.ACTION_SEND);
@@ -131,6 +131,8 @@ public class MainActivity extends AppCompatActivity {
         TextView myTextView = (TextView) findViewById(R.id.blanktext);
         myTextView.setText("Terkirim");
     }
+
+
     private void showViewNote(final boolean viewNote, final Note note, final int position) {
         LayoutInflater layoutInflaterAndroid = LayoutInflater.from(getApplicationContext());
         View view = layoutInflaterAndroid.inflate(R.layout.view_doalog, null);
@@ -241,7 +243,7 @@ public class MainActivity extends AppCompatActivity {
         if (item.getItemId() == R.id.appinfo) {
             startActivity(new Intent(this, AppInfo.class));
         } else if (item.getItemId() == R.id.lihat_berita) {
-            startActivity(new Intent(this, Berita.class));
+            startActivity(new Intent(this, NewBerita.class));
         }
         return true;
     }

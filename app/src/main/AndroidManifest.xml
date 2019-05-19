@@ -9,13 +9,26 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
+        android:screenOrientation="portrait"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme"
-        android:screenOrientation="portrait">
+        android:theme="@style/AppTheme">
+        <activity android:name=".view.NewsDetailActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait"></activity>
+        <activity android:name=".view.NewBerita"
+            android:label="Berita Terbaru"
+            android:parentActivityName=".view.MainActivity"
+            android:screenOrientation="portrait">
+        <meta-data
+        android:name="android.support.PARRENT_ACTIVITY"
+        android:value=".view.MainActivity" />
+        </activity>
+
         <receiver android:name=".AppWidget">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
             </intent-filter>
+
             <meta-data
                 android:name="android.appwidget.provider"
                 android:resource="@xml/app_widget_info" />
@@ -32,7 +45,7 @@
         </activity>
         <activity
             android:name=".view.AppInfo"
-            android:theme="@style/AppTheme.NoActionBar"/>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".view.Berita"
             android:label="Berita Terbaru"
@@ -45,16 +58,18 @@
         <activity
             android:name=".Menu"
             android:label="@string/app_name"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".view.MainActivity"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.MainActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".view.SplashScreen"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

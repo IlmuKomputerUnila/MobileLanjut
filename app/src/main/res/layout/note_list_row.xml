@@ -28,7 +28,8 @@
         android:layout_marginEnd="133dp"
         android:layout_toRightOf="@id/dot"
         android:textColor="@color/timestamp"
-        android:textSize="@dimen/timestamp" />
+        android:textSize="@dimen/timestamp"
+        tools:ignore="RtlCompat" />
 
     <TextView
         android:id="@+id/note"
@@ -41,19 +42,6 @@
         android:textColor="@color/note_list_text"
         android:textSize="@dimen/note_list_text" />
 
-    <Button
-        android:id="@+id/kirim"
-        android:layout_width="95dp"
-        android:layout_height="35dp"
-        android:layout_below="@id/note"
-        android:layout_marginLeft="260dp"
-        android:layout_marginTop="-27dp"
-        android:layout_toRightOf="@id/dot"
-        android:background="@drawable/ic_send_24dp"
-        android:clickable="true"
-        android:onClick="buttonClick"
-        android:textColor="@color/colorPrimary" />
-
     <TextView
         android:id="@+id/blanktext"
         android:layout_width="wrap_content"
@@ -64,4 +52,17 @@
         android:layout_toRightOf="@id/dot"
         android:gravity="start|end"
         android:textColor="@color/colorPrimary" />
+    <Button
+        android:id="@+id/kirim"
+        android:layout_width="132dp"
+        android:layout_height="35dp"
+        android:layout_below="@id/note"
+        android:layout_marginLeft="293dp"
+        android:layout_marginTop="-27dp"
+        android:layout_toRightOf="@id/dot"
+        android:background="@drawable/ic_send_24dp"
+        android:clickable="true"
+        android:onClick="buttonClick"
+        android:textColor="@color/colorPrimary" />
+
 </RelativeLayout>
