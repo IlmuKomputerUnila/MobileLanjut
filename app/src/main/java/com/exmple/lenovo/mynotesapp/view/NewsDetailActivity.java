@@ -33,15 +33,12 @@ public class NewsDetailActivity extends AppCompatActivity implements AppBarLayou
     private AppBarLayout appBarLayout;
     private Toolbar toolbar;
     private String mUrl, mImg, mTitle, mDate, mSource, mAuthor, mDescc, mContent;
-    private SlidrInterface slidr;
     private FloatingActionButton fab;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_news_detail);
-
-        slidr = Slidr.attach(this);
 
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);

@@ -9,9 +9,9 @@
 
     <ImageView
         android:id="@+id/errorImage"
-        android:src="@drawable/ic_error_outline_black_24dp"
-        android:layout_width="100dp"
-        android:layout_height="150dp"
+        android:src="@mipmap/ic_error"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="65dp"
         android:visibility="visible"/>
@@ -21,9 +21,11 @@
         android:text="Error"
         android:textColor="@color/colorPrimary"
         android:textStyle="bold"
+        android:textSize="20dp"
         android:fontFamily="sans-serif-light"
         android:layout_centerHorizontal="true"
         android:layout_below="@id/errorImage"
+        android:layout_marginTop="-20dp"
         android:gravity="center_horizontal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
@@ -43,13 +45,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Retry"
+        android:background="@drawable/round_white"
         android:backgroundTint="@color/colorAccent"
         android:textColor="#fff"
         android:layout_below="@+id/errorMessage"
         android:layout_marginTop="20dp"
         android:layout_centerHorizontal="true"
-
         />
-
-
 </RelativeLayout>

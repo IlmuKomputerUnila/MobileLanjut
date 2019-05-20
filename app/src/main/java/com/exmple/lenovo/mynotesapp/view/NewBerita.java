@@ -31,7 +31,6 @@ import com.exmple.lenovo.mynotesapp.NewNetwork.ApiClient;
 import com.exmple.lenovo.mynotesapp.NewNetwork.ApiInterface;
 import com.exmple.lenovo.mynotesapp.R;
 import com.exmple.lenovo.mynotesapp.utils.Utils;
-import com.r0adkll.slidr.Slidr;
 import com.r0adkll.slidr.model.SlidrInterface;
 
 import java.util.ArrayList;
@@ -64,8 +63,6 @@ public class NewBerita extends AppCompatActivity implements SwipeRefreshLayout.O
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_berita);
-
-        slidr = Slidr.attach(this);
 
         swipeRefreshLayout = findViewById(R.id.swipe_refresh_layout);
         swipeRefreshLayout.setOnRefreshListener(this);
@@ -140,7 +137,7 @@ public class NewBerita extends AppCompatActivity implements SwipeRefreshLayout.O
                             errorCode = "Error tidak diketahui";
                             break;
                     }
-                    showErrorMessage(R.drawable.ic_error_outline_black_24dp,
+                    showErrorMessage(R.mipmap.ic_error,
                             "Tidak ada hasil",
                             "Coba lagi!\n"
                                     + errorCode);
@@ -150,9 +147,10 @@ public class NewBerita extends AppCompatActivity implements SwipeRefreshLayout.O
             @Override
             public void onFailure(Call<News> call, Throwable t) {
                 swipeRefreshLayout.setRefreshing(false);
-                showErrorMessage(R.drawable.ic_error_outline_black_24dp,
-                        "Kesalahan Koneksi.!!!",
-                        "Atur Jaringan Anda, Coba Lagi!!\n");
+                showErrorMessage(R.mipmap.ic_error,
+                        "Whoops.!!!",
+                        "Samething Wrong...!!\n"
+                                +"Network Failure, Please Try Again");
             }
         });
     }

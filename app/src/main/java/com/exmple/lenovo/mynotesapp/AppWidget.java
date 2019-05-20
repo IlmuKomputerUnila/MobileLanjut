@@ -19,7 +19,7 @@ public class AppWidget extends AppWidgetProvider {
             PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, intent, 0);
 
             RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.app_widget);
-            views.setOnClickPendingIntent(R.id.btnwidget, pendingIntent);
+            views.setOnClickPendingIntent(R.id.btnimg, pendingIntent);
 
             appWidgetManager.updateAppWidget(appwidgetid,views);
         }
