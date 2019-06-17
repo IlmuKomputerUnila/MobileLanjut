@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "91855587169",
+    "firebase_url": "https://mobile-f9124.firebaseio.com",
+    "project_id": "mobile-f9124",
+    "storage_bucket": "mobile-f9124.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:91855587169:android:1c5db38a4cdd412c",
+        "android_client_info": {
+          "package_name": "com.exmple.lenovo.mynotesapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "91855587169-b9hpgavv5091rejd5trcofdfo0st2guc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.exmple.lenovo.mynotesapp",
+            "certificate_hash": "b915b8359849a3e3c7389abf63f775adbbec2987"
+          }
+        },
+        {
+          "client_id": "91855587169-t006ogscfi8l74bduqregief3fkam1lf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBtSGWz0eWufwId5qRWlb-BeeUhCgQebu4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "91855587169-t006ogscfi8l74bduqregief3fkam1lf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

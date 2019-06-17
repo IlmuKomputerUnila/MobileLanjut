@@ -18,6 +18,23 @@
             android:backgroundTint="@color/colorPrimary"
             android:layout_gravity="center"
             android:background="@mipmap/ic_icon"/>
+        <Button
+        android:id="@+id/btnnewnote"
+        android:text="Lihat Note"
+        android:textSize="20dp"
+        android:background="@color/colorAccent"
+        android:textColor="#FFF"
+        android:layout_height="40dp"
+        android:layout_width="250dp"
+        android:layout_marginBottom="10dp"/>
+        <Button
+            android:id="@+id/btnberita"
+            android:text="Lihat Berita"
+            android:textSize="20dp"
+            android:background="@color/colorAccent"
+            android:textColor="#FFF"
+            android:layout_height="40dp"
+            android:layout_width="250dp"/>
     </LinearLayout>
 
 </LinearLayout>
